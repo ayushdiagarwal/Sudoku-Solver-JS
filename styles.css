@@ -1,0 +1,22 @@
+.container {
+}
+
+.box {
+    width: 630px;
+    height: 630px;
+    border: 1px solid black;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: repeat(9,auto);
+}
+
+.cell {
+    border: 1px solid black;
+    width: 70px;
+    height: 70px;
+    background-color: aqua;
+}
+
+.cell:hover {
+    background-color: aquamarine;
+}
