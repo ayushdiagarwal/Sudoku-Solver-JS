@@ -1,4 +1,5 @@
 const box = document.querySelector(".box");
+const startBtn = document.querySelector(".startBtn")
 const size = 9 * 9;
 
 let board = [
@@ -16,7 +17,10 @@ let board = [
 for (let i = 0; i < size; i++) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
-  cell.textContent = board[Math.floor(i / 9)][i % 9];
+  let val = board[Math.floor(i / 9)][i % 9];
+  if (val != 0){
+    cell.textContent = val;
+  }
   cell.setAttribute("index", String(i));
   box.appendChild(cell);
 }
@@ -56,13 +60,11 @@ async function solve() {
     for (let y = 0; y < 9; y++) {
       if (board[x][y] == 0) {
         let index = 9 * x + y;
-        console.log(x, y, index);
 
         const curCell = document.querySelector(`.cell[index="${index}"]`);
 
         for (let n = 1; n <= 9; n++) {
           curCell.textContent = String(n);
-          // curCell.style.color = "red";
           curCell.classList.add("active");
           await sleep(0.03);
           if (possible(x, y, n)) {
@@ -88,39 +90,5 @@ async function sleep(seconds) {
   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }
 
-solve();
-console.log(board);
 
-// Reflecting the change on the file
-const cells = document.querySelectorAll(".cell");
-
-for (let i = 0; i < size; i++) {
-  cells[i].textContent = board[Math.floor(i / 9)][i % 9];
-}
-
-
-
-
-
-// this is the actual working algorithm
-
-function solveBoard() {
-  for (let y = 0; y < 9; y++) {
-    for (let x = 0; x < 9; x++) {
-      if (board[x][y] == 0) {
-        let index = 9 * y + x;
-        for (let n = 1; n <= 9; n++) {
-          if (possible(x, y, n)) {
-            board[x][y] = n;
-            if (solve()) {
-              return true;
-            }
-            board[x][y] = 0;
-          }
-        }
-        return false;
-      }
-    }
-  }
-  return true;
-}
+startBtn.addEventListener("click", solve);
