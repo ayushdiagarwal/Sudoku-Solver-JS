@@ -16,9 +16,15 @@
     height: 70px;
     background-color: aqua;
     text-align: center; /* Horizontal align */
-    
+    font-size: x-large;
+    color: rgb(90, 77, 77);
 }
 
 .cell:hover {
     background-color: aquamarine;
+}
+
+.active {
+    color: red;
+    background-color: rgb(255, 204, 0);
 }
