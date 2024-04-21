@@ -15,6 +15,8 @@
     width: 70px;
     height: 70px;
     background-color: aqua;
+    text-align: center; /* Horizontal align */
+    
 }
 
 .cell:hover {
