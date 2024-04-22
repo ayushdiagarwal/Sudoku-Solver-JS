@@ -150,7 +150,7 @@ fetch('https://raw.githubusercontent.com/grantm/sudoku-exchange-puzzle-bank/mast
 make(board);
 
 genBtn.addEventListener("click", async () => {
-  // I was not able to retrieve the returned value of from generate(), whyy?
+  // I was not able to retrieve the returned value of from generate(), why?
   await generate();
 })
 
