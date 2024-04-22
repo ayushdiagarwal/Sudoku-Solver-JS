@@ -41,8 +41,15 @@ body {
     background-color: rgb(255, 204, 0);
 }
 
-.startBtn {
+.btns {
+    vertical-align: top;
+    display: flex;
+    justify-content: space-between;
     margin-top: 30px;
+}
+
+.startBtn {
+    margin-right: 2em;
     background-color: rgb(122, 230, 122);
     width: 100px;
     height: 50px;
@@ -51,3 +58,9 @@ body {
 }
 
 
+.genBtn {
+    width: 150px;
+    height: 50px;
+    font-family: inherit;
+    font-size: xx-large;
+}
